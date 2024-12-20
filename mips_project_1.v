@@ -195,7 +195,7 @@ module mips (clk, reset);
 	
 	reg [31:0] PC;
 	wire [31:0] instr;
-	instruction_mem im (PC[11:2], instr); ///////updated/////////
+	instruction_mem im (PC[11:2], instr); 
 	
 	
 	wire [31:0] srcA;
@@ -212,7 +212,6 @@ module mips (clk, reset);
 	wire alu_src;
 	wire zero;
 	wire [31:0] signlmm;
-	//wire [31:0] RD2_wire;
 	wire [2:0] alu_control;
 	wire [31:0] alu_result;
 
@@ -225,7 +224,7 @@ module mips (clk, reset);
 	wire mem_to_reg;
 	wire [31:0] read_data;
 
-	data_memory data_mem1(alu_result, write_data, mem_write, read_data, clk); ////////updated/////////
+	data_memory data_mem1(alu_result, write_data, mem_write, read_data, clk); 
 	mux m3 (alu_result, read_data, mem_to_reg, result);
 	
 	
